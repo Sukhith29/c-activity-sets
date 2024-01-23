@@ -1,0 +1,81 @@
+(gdb) s
+PS C:\Users\sukhi\OneDrive\Desktop\2nd sem\psc second sem\c-activity-sets\set01> gdb
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+(gdb) file problem05
+Reading symbols from C:\Users\sukhi\OneDrive\Desktop\2nd sem\psc second sem\c-activity-sets\set01\problem05.exe...done.
+(gdb) l
+12          *sum = a+b;
+13      }
+14      void output(int a, int b, int c)
+15      {
+16          printf("Sum of %d + %d is %d\n",a,b,c);
+17      }
+18      int main()
+19      {
+20          int a,b,c;
+21          input(&a,&b);
+(gdb) b main
+Breakpoint 1 at 0x4014da: file problem05.c, line 21.
+(gdb) b add
+Breakpoint 2 at 0x401492: file problem05.c, line 12.
+(gdb) b output 
+Breakpoint 3 at 0x4014a8: file problem05.c, line 16.
+(gdb) r
+Starting program: C:\Users\sukhi\OneDrive\Desktop\2nd sem\psc second sem\c-activity-sets\set01/problem05.exe 
+[New Thread 13252.0x6d74]
+[New Thread 13252.0x2034]
+
+Breakpoint 1, main () at problem05.c:21
+21          input(&a,&b);
+(gdb) n
+Enter two numbers
+n
+22          add(a,b,&c);
+(gdb) n
+
+Breakpoint 2, add (a=3457024, b=0, sum=0x61ff14) at problem05.c:12
+12          *sum = a+b;
+(gdb) n
+13      }
+(gdb) n
+main () at problem05.c:23
+23          output(a,b,c);
+(gdb) n
+
+Breakpoint 3, output (a=3457024, b=0, c=3457024) at problem05.c:16
+16          printf("Sum of %d + %d is %d\n",a,b,c);
+(gdb) n
+Sum of 3457024 + 0 is 3457024
+17      }
+(gdb) n
+main () at problem05.c:24
+24          return 0;
+(gdb) n
+25      }
+(gdb) n
+0x00401288 in __register_frame_info ()
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) n
+Program not restarted.
+(gdb) n
+Single stepping until exit from function __register_frame_info,
+which has no line number information.
+0x0040128a in __register_frame_info ()
+(gdb) s
+Single stepping until exit from function __register_frame_info,
+which has no line number information.
+0x0040128f in __register_frame_info ()
+(gdb) s 
+Single stepping until exit from function __register_frame_info,
+which has no line number information.
+0x00401292 in __register_frame_info ()
+(gdb)

@@ -1,0 +1,75 @@
+(gdb) q
+PS C:\Users\sukhi\OneDrive\Desktop\2nd sem\psc second sem\c-activity-sets\set01> gdb
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+(gdb) file problem04
+Reading symbols from C:\Users\sukhi\OneDrive\Desktop\2nd sem\psc second sem\c-activity-sets\set01\problem04.exe...done.
+(gdb) l
+11          *sum = a+b;
+12      }
+13      void output(int a, int b, int c)
+14      {
+15          printf("Sum of %d + %d is %d\n",a,b,c);
+16      }
+17      int main()
+18      {
+19          int a,b,c;
+20          input(&a,&b);
+(gdb) b main 
+Breakpoint 1 at 0x4014da: file problem04.c, line 20.
+(gdb) b output 
+Breakpoint 2 at 0x4014a8: file problem04.c, line 15.
+(gdb) r
+Starting program: C:\Users\sukhi\OneDrive\Desktop\2nd sem\psc second sem\c-activity-sets\set01/problem04.exe
+[New Thread 29076.0x3dc0]
+[New Thread 29076.0x72d0]
+
+Breakpoint 1, main () at problem04.c:20
+20          input(&a,&b);
+(gdb) n
+Enter two numbers
+7
+8
+21          add(a,b,&c);
+(gdb) n
+22          output(a,b,c);
+(gdb) n
+
+Breakpoint 2, output (a=7, b=8, c=15) at problem04.c:15
+15          printf("Sum of %d + %d is %d\n",a,b,c);
+(gdb) n
+Sum of 7 + 8 is 15
+16      }
+(gdb) n
+main () at problem04.c:23
+23          return 0;
+(gdb) n
+24      }
+(gdb) n
+0x00401288 in __register_frame_info ()
+(gdb) n
+Single stepping until exit from function __register_frame_info,
+which has no line number information.
+0x0040128a in __register_frame_info ()
+(gdb) n
+Single stepping until exit from function __register_frame_info,
+which has no line number information.
+0x0040128f in __register_frame_info ()
+(gdb) s
+Single stepping until exit from function __register_frame_info,
+which has no line number information.
+0x00401292 in __register_frame_info ()
+(gdb) s
+Single stepping until exit from function __register_frame_info,
+which has no line number information.
+[Inferior 1 (process 29076) exited normally]
+(gdb) n
+The program is not being run.
+(gdb)
